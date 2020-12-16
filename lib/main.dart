@@ -20,7 +20,6 @@ class _MyAppState extends State<MyApp> {
     return new SplashScreen(
       seconds: 10,
       navigateAfterSeconds: new AfterSplash(),
-
       title: new Text(
         'WhatsApp',
         style: new TextStyle(
@@ -29,12 +28,10 @@ class _MyAppState extends State<MyApp> {
           color: Colors.green[200],
         ),
       ),
-
-      image: new Image.network('https://i.imgur.com/TyCSG9A.png'),
-
+      image: new Image(image: AssetImage('assets/whatsapp.png')),
       backgroundColor: Colors.black87,
       styleTextUnderTheLoader: new TextStyle(),
-      photoSize: 100.0,
+      photoSize: 25.0,
       onClick: () => print("Flutter Egypt"),
       loaderColor: Colors.green[300],
       loadingText: new Text(
