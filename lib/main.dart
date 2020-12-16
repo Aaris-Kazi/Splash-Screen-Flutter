@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
-void main(){
+
+void main() {
   runApp(new MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: new MyApp(),
   ));
 }
-
 
 class MyApp extends StatefulWidget {
   @override
@@ -16,19 +17,29 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return new SplashScreen(
-      seconds: 14,
-      navigateAfterSeconds: new AfterSplash(),
-      title: new Text('Welcome In SplashScreen',
-      style: new TextStyle(
-        fontWeight: FontWeight.bold,
-        fontSize: 20.0
-      ),),
+      
+      seconds: 10,
+      // navigateAfterSeconds: new AfterSplash(),
+      
+      title: new Text(
+        'WhatsApp',
+        style: new TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 20.0,
+          color: Colors.green[200],
+        ),
+      ),
+      
       image: new Image.network('https://i.imgur.com/TyCSG9A.png'),
       backgroundColor: Colors.white,
       styleTextUnderTheLoader: new TextStyle(),
       photoSize: 100.0,
-      onClick: ()=>print("Flutter Egypt"),
-      loaderColor: Colors.red
+      onClick: () => print("Flutter Egypt"),
+      loaderColor: Colors.green[300],
+      loadingText: new Text(
+        "Let's Chat!",
+        style: new TextStyle(color: Colors.green[200]),
+      ),
     );
   }
 }
@@ -38,16 +49,12 @@ class AfterSplash extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-      title: new Text("Welcome In SplashScreen Package"),
-      automaticallyImplyLeading: false
-      ),
+          title: new Text("After splash"), automaticallyImplyLeading: false),
       body: new Center(
-        child: new Text("Done!",
-        style: new TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 30.0
-        ),),
-
+        child: new Text(
+          "Done!",
+          style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
+        ),
       ),
     );
   }
