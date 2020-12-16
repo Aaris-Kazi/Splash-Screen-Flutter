@@ -19,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return new SplashScreen(
       seconds: 10,
-      // navigateAfterSeconds: new AfterSplash(),
+      navigateAfterSeconds: new AfterSplash(),
 
       title: new Text(
         'WhatsApp',
